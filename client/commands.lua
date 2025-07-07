@@ -4,5 +4,14 @@ Citizen.CreateThread(function()
                 OpenTablet('Police')
             end
         end, false)
+
+        RegisterCommand(Config["resetcommand"], function()
+            SendNUIMessage({
+                action = "reload"
+            })
+        end, false)
 end)
+
+
+
 
