@@ -1,0 +1,29 @@
+Volg deze stappen om het tabletitem correct te laten werken met ox_inventory:
+
+1. Open je `ox_inventory/data/items.lua` (of waar je items staan gedefinieerd).
+
+2. Voeg het volgende item toe:
+
+['tablet'] = {
+    label = 'Tablet',
+    weight = 200,
+    stack = false,
+    close = true,
+    description = 'Een politietablet om informatie op te zoeken.',
+    client = {
+        export = 'bluecloudmeos-tablet.useTablet'
+    }
+},
+
+3. Plaats bijgevoegde tablet.png in ox_inventory/web/images
+
+4. Zorg ervoor dat je `config.lua` correct is ingesteld:
+
+Config = {
+    ...
+    ["UseItem"] = true,
+    ["TabletItem"] = 'tablet',
+    ...
+}
+
+Klaar! Je kunt nu de tablet gebruiken via het item met ox_inventory.
