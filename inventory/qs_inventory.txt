@@ -1,0 +1,31 @@
+Volg deze stappen om het tabletitem correct te laten werken met qs-inventory:
+
+1.  Voeg het tabletitem toe aan je items-bestand (`qs-inventory/shared/items.lua` of `qb-core/shared/items.lua` afhankelijk van jouw Framework):.
+
+2. Voeg het volgende item toe:
+
+['tablet'] = {
+    ['name'] = 'tablet',
+    ['label'] = 'Tablet',
+    ['weight'] = 200,
+    ['type'] = 'item',
+    ['image'] = 'tablet.png',
+    ['unique'] = true,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Een politietablet om informatie op te zoeken.'
+},
+
+3. Plaats bijgevoegde tablet.png in qs-inventory/html/images 
+
+4. Zorg ervoor dat je `config.lua` correct is ingesteld:
+
+Config = {
+    ...
+    ["UseItem"] = true,
+    ["TabletItem"] = 'tablet',
+    ...
+}
+
+Klaar! Je kunt nu de tablet gebruiken via het item met qs-inventory.
